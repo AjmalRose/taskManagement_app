@@ -26,9 +26,6 @@ class HomeScreen extends StatelessWidget {
               final prefs = await SharedPreferences.getInstance();
               await prefs.clear();
 
-              Navigator.pop(context);
-              Navigator.pop(context);
-
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (_) => LoginScreen()),
@@ -75,9 +72,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
               Spacer(),
-
               Padding(
                 padding: EdgeInsets.only(bottom: 12),
                 child: ListTile(
@@ -89,7 +84,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-
         appBar: AppBar(
           elevation: 0,
           title: Text(
@@ -114,11 +108,9 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-
         body: TabBarView(
           children: [TaskList(type: 0), TaskList(type: 1), TaskList(type: 2)],
         ),
-
         floatingActionButton: FloatingActionButton(
           backgroundColor: Color(0xFF3949AB),
           shape: RoundedRectangleBorder(
